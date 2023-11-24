@@ -33,4 +33,3 @@ const backupDatabase = async () => {
 
 // Initiate the database backup
 backupDatabase();
-

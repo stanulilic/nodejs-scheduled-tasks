@@ -1,4 +1,4 @@
-import  Agenda from "agenda";
+import Agenda from "agenda";
 
 const mongoConnectionString = "mongodb://localhost/agendaDB";
 
@@ -14,4 +14,3 @@ agenda.define("send a welcome message", async () => {
 
   await agenda.every("one minute", "send a welcome message");
 })();
-
