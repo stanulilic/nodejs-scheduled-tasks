@@ -13,8 +13,8 @@
   "dependencies": {
     "agenda": "^5.0.0",
     "agendash": "^4.0.0",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "axios": "^1.6.2",
     "moment": "^2.29.4"
   }
 }

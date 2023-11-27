@@ -1,7 +1,7 @@
+import "dotenv/config";
 import Agenda from "agenda";
-import axios from "axios";
 
-const mongoConnectionString = "mongodb://127.0.0.1/agendaDB";
+const mongoConnectionString = process.env.MONGO_URI;
 
 const agenda = new Agenda({ db: { address: mongoConnectionString } });
 
@@ -9,9 +9,10 @@ export async function scheduleTask(name, frequency, callback) {
   try {
     await agenda.define(name, { priority: "high" }, async (job, done) => {
       await callback();
-      const response = await axios.get(
-        "https://uptime.betterstack.com/api/v1/heartbeat/1RxYE9LbLuVx6sjHcy6P4jA1"
+      await fetch(
+        `https://uptime.betterstack.com/api/v1/heartbeat/${process.env.HEARTBEAT_TOKEN}`
       );
+
       done();
     });
 
