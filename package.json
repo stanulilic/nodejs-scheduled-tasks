@@ -9,5 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "agenda": "^5.0.0",
+    "dotenv": "^16.3.1"
+  }
 }
