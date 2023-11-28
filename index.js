@@ -36,6 +36,19 @@ await agenda.now("exporting data", {
   path: "/home/username/sales_report.csv",
 });
 
+async function listJobs() {
+  const jobs = await agenda.jobs({});
+  jobs.forEach((job) => {
+    console.log(
+      `Job ID: ${job.attrs._id}, Name: ${
+        job.attrs.name
+      }, Data: ${JSON.stringify(job.attrs.data)}`
+    );
+  });
+}
+
+listJobs();
+
 app.listen(3000, () => {
   console.log("Agendash is accessible at: http://localhost:3000/dash/");
 });
